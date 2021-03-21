@@ -1,6 +1,6 @@
 let utilidades = require("../Resources/utilidades");
-let Multimedias = require("../models/modelMultimedias");
-let Paginas = require("../models/modelPaginas");
+let Multimedias = require("../Models/modelMultimedias");
+let Paginas = require("../Models/modelPaginas");
 let mongoose = require('mongoose');
 
 async function getMultimediasFiltro(req, res, next) {

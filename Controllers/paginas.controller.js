@@ -1,5 +1,5 @@
 let utilidades = require("../Resources/utilidades");
-let Paginas = require("../models/modelPaginas.js");
+let Paginas = require("../Models/modelPaginas.js");
 let mongoose = require('mongoose');
 
 async function getPaginasFiltro(req, res, next) {
