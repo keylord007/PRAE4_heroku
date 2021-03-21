@@ -1,0 +1,138 @@
+<header class="header-area p-relative">
+  <div class="top-header top-header-style-four">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-11 col-md-11">
+                  <ul class="top-header-contact-info">
+                      <li>
+                          Tel:
+                          <a href="#">809-724-0266</a>
+                      </li>
+                  </ul>
+                  <div class="top-header-social">
+                      <span>Siguenos en:</span>
+                      <a href="https://www.facebook.com/uniuapa" target="_blank"><i class='bx bxl-facebook'></i></a>
+                      <a href="https://twitter.com/uniuapa" target="_blank"><i class='bx bxl-twitter'></i></a>
+                      <a href="https://www.uapa.edu.do/radio/" target="_blank"><i class='bx bx-radio'></i></a>
+                      <a href="https://www.instagram.com/uniuapa/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                      <a href="https://www.youtube.com/channel/UCuHpTq7qj7OaErE37P8fQ1Q" target="_blank"><i class='bx bxl-youtube'></i></a>
+                  </div>
+                  <label for="">.......</label><label style="color: white; font-size: medium;">Portal de Recursos Académicos y Educativos (PRAE)</label>
+
+                </div>
+              <div class="col-1 col-md-1">
+                  <ul class="top-header-login-register">
+                      <li *ngIf="!loginService.isLoggedIn()"><a routerLink="/login"><i class='bx bx-log-in'></i> Login</a></li>
+                      <li *ngIf="loginService.isLoggedIn()"><a (click)="logOut()"><i class='bx bx-log-in'></i> Logout</a></li>
+                      </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="navbar-area navbar-style-three" ngStickyNav stickyClass="sticky-box-shadow" ngStickyNav>
+      <div class="container">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light" [class.active]="classApplied">
+              <a class="navbar-brand" routerLink="/"><img src="assets/img/black-logo.png" alt="logo"></a>
+              <button class="navbar-toggler" type="button" (click)="toggleClass()">
+                  <span class="burger-menu">
+                      <span class="top-bar"></span>
+                      <span class="middle-bar"></span>
+                      <span class="bottom-bar"></span>
+                  </span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav">
+                      <li *ngIf="loginService.isLoggedIn()" class="nav-item"><a href="javascript:void(0)" class="nav-link">Administración<i class='fa fa-chevron-down'></i></a>
+                          <ul class="dropdown-menu">
+                              <li class="nav-item"><a routerLink="/paginas" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Páginas</a></li>
+                              <li class="nav-item"><a routerLink="/multimedias" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Recursos</a></li>
+                          </ul>
+                      </li>
+                      <li class="nav-item"><a href="javascript:void(0)" class="nav-link">Generales <i class='bx bx-chevron-down'></i></a>
+                          <ul class="dropdown-menu">
+                              <li class="nav-item"><a routerLink="#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Propósito </a></li>
+                              <li class="nav-item"><a routerLink="#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Justificación </a></li>
+                              <li class="nav-item"><a routerLink="#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Estructura organizativa</a></li>
+                              <li class="nav-item"><a routerLink="#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Documentación legal</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item"><a href="javascript:void(0)" class="nav-link">Pedagógicos <i class='bx bx-chevron-down'></i></a>
+                          <ul class="dropdown-menu">
+                              <li class="nav-item"><a routerLink="/instructor" class="nav-link">Estrategias de enseñanza-aprendizaje  </a></li>
+                              <li class="nav-item"><a routerLink="/ejemplo3" href="#" class="nav-link">Metodología activa y participativa  </a></li>
+                              <li class="nav-item"><a routerLink="#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Aprendizaje autónomo y autodirigido </a></li>
+                              <li class="nav-item"><a href="#" class="nav-link">Mediación pedagógica  </a></li>
+                              <li class="nav-item"><a routerLink="#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Buzón de necesidades </a></li>
+                              <li class="nav-item"><a routerLink="#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Curso de Iniciación a los participantes de nuevo ingreso </a></li>
+                              <li class="nav-item"><a routerLink="#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Curso de Iniciación a los participantes de nuevo ingreso </a></li>
+                              <li class="nav-item"><a routerLink="#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Evaluación de los Aprendizajes </a></li>
+
+                          </ul>
+                      </li>
+                      <li class="nav-item"><a href="javascript:void(0)" class="nav-link">Tecnológicos <i class='bx bx-chevron-down'></i></a>
+                          <ul class="dropdown-menu">
+                              <li class="nav-item"><a href="#" class="nav-link">Para crear y compartir contenidos  <i class=''></i></a></li>
+                              <li class="nav-item"><a routerLink="/#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Presentadores Electrónicos </a></li>
+                              <li class="nav-item"><a href="#" class="nav-link">Comunicación </a></li>
+                              <li class="nav-item"><a href="#" class="nav-link">Paquette de office  <i class=''></i></a></li>
+                              <li class="nav-item"><a href="#" class="nav-link">Hacer objetos de aprendizaje  <i class=''></i></a></li>
+                              <li class="nav-item"><a routerLink="/#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Recursos audiovisuales </a></li>
+                              <li class="nav-item"><a routerLink="/#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Plataformas educativas </a></li>
+                              <li class="nav-item"><a href="#" class="nav-link">Otros   <i class=''></i></a></li>
+                              <li class="nav-item"><a href="#" class="nav-link">Creación de Webquest   <i class=''></i></a></li>
+                              <li class="nav-item"><a routerLink="/#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Mapas  </a></li>
+                              <li class="nav-item"><a routerLink="/#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Trabajo colaborativo  </a></li>
+                              <li class="nav-item"><a href="#" class="nav-link">Tutoriales-UAPA  </a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item"><a href="javascript:void(0)" class="nav-link">Formación continua <i class='bx bx-chevron-down'></i></a>
+                          <ul class="dropdown-menu">
+                              <li class="nav-item"><a href="#" class="nav-link">Práctica docente  </a> </li>
+                              <li class="nav-item"><a routerLink="/#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Capacitación constante y continuada   </a></li>
+                              <li class="nav-item"><a routerLink="/#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Boletín tecnopedagógico  </a></li>
+                              <li class="nav-item"><a href="#" class="nav-link">Cronogramas de eventos académicos y de investigación  </a></li>
+                            </ul>
+                      </li>
+                      <li class="nav-item"><a href="javascript:void(0)" class="nav-link">Documentos UAPA <i class='bx bx-chevron-down'></i></a>
+                          <ul class="dropdown-menu">
+                              <li class="nav-item"><a href="#" class="nav-link">MECCA  </a> </li>
+                              <li class="nav-item"><a routerLink="/#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Prioridades rectorales en los planes operativos anual 2020    </a></li>
+                              <li class="nav-item"><a routerLink="/#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Reglamento Académico de Postgrado   </a></li>
+                              <li class="nav-item"><a href="#" class="nav-link">Reglamento para trabajo en entornos virtuales   </a></li>
+                              <li class="nav-item"><a href="#" class="nav-link">Reglamento de investigación   </a> </li>
+                              <li class="nav-item"><a routerLink="/#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Reglamento de Tesis    </a></li>
+                              <li class="nav-item"><a routerLink="/#" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Reglamento de los Aprendizaje   </a></li>
+                              <li class="nav-item"><a href="#" class="nav-link">Código de ética  </a></li>
+                        </ul>
+                      </li>
+                  </ul>
+              </div>
+              <div class="others-option">
+
+                  <div class="search-box d-inline-block">
+                      <i class='bx bx-search' (click)="toggleClass3()"></i>
+                  </div>
+              </div>
+          </nav>
+      </div>
+  </div>
+</header>
+
+<div class="search-overlay" [class.active]="classApplied3">
+  <div class="d-table">
+      <div class="d-table-cell">
+          <div class="search-overlay-layer"></div>
+
+          <div class="search-overlay-close" (click)="toggleClass3()">
+              <span class="search-overlay-close-line"></span>
+              <span class="search-overlay-close-line"></span>
+          </div>
+          <div class="search-overlay-form">
+              <form>
+                  <input type="text" class="input-search" placeholder="Buscar aqui...">
+                  <button type="submit"><i class='bx bx-search-alt'></i></button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

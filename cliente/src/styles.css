@@ -1,0 +1,32 @@
+.d-table {
+    width: 100%;
+    height: 100%;
+}
+.d-table-cell {
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    transition: var(--transition);
+    color: var(--blackColor);
+}
+
+a:hover, a:focus {
+    color: #ff1949;
+    text-decoration: none;
+}
+
+input, button, a {
+    outline: 0 !important;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }  
+
+.cursor-point {
+    cursor: pointer;
+}
+/* You can add global styles to this file, and also import other style files */

@@ -1,0 +1,89 @@
+<app-header-style-one></app-header-style-one>
+<div class="mx-5 my-5">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">Páginas</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Páginas</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.content-header -->
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="">
+                <div class="card">
+                    <div class="card-header with-border">
+                        <div class="toolbar text-right my-2">
+                            <button (click)="eventoClickNuevaPagina()" class="btn btn-info">
+                            <i class="fa fa-plus mr-1"></i>Nueva Página</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ngx-datatable
+                            #paginasTabla
+                            class='bootstrap'
+                            [columnMode]="'force'"
+                            [rows]="paginas"
+                            [headerHeight]="50"
+                            [footerHeight]="50"
+                            [rowHeight]="40"
+                            [limit]="5"
+                            [messages]="{emptyMessage:'',totalMessage: 'Total',selectedMessage: 'Seleccionado'}"
+                            >
+                            <ngx-datatable-column name="Nombre" prop="f_descripcion">
+                                <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
+                                    <strong>{{ value }}</strong>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Nota" prop="f_nota">
+                                <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
+                                    <strong>{{ value }}</strong>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Activo" prop="f_activo">
+                                <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
+                                    <strong><i *ngIf="value" title="Eliminar" class='bx bx-check'></i>  <i *ngIf="!value" title="Eliminar" class="bx bx-x"></i></strong>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Acciones" prop="accion" headerClass="central" [width]="200">
+                                <ng-template let-value="value" let-row="row" ngx-datatable-cell-template class="centralizar">
+                                    <div class="acciones text-end">
+                                        <span class="botonesAccionPagina cursor-point mr-3" (click)="eventoClickEditarPagina($event, row)"><i title="Editar" class="bx bx-edit-alt"></i></span>
+                                        <span class="botonesAccionPagina cursor-point" (click)="eventoClickDesactivarPagina($event, row)"><i *ngIf="row.f_activo" title="Desactivar" class="bx bx-lock-alt"></i> <i *ngIf="!row.f_activo" title="Activar" class="bx bx-bell"></i></span>
+                                    </div>
+                                </ng-template>
+                            </ngx-datatable-column>
+                        </ngx-datatable>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<app-footer></app-footer>
+
+<button class="d-none" id="modalAgregarPagina" data-toggle="modal" data-target="#agregarPagina"></button>
+<div class="modal fade" id="agregarPagina">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button id="cerrarModelPagina" type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <app-crear-actualizar-paginas [pagina]="pagina" [accion]="accionModelAgregarPagina" [conmutador]="conmutadorModelAgregarPagina" (evento_aceptar)="agregarPaginaNueva($event)" (eventos_cancelar)="modalCerrar('#cerrarModelPagina')"></app-crear-actualizar-paginas>
+          </div>
+        </div>
+    </div>
+</div>

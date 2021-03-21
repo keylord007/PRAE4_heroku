@@ -1,0 +1,59 @@
+<section class="content">
+    <div class="box box-success">
+      <form #form="ngForm" [formGroup]="multimediaForm" (ngSubmit)="onFormSubmit(form)">
+        <div class="box-content">
+          <div class="box-header">
+            <h4 class="box-title">{{ accion ? 'Crear' : 'Actualizar' }} Recurso</h4>
+          </div>
+          <div class="box-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                  <div class="form-group">
+                    <label for="entradaDescripcion">Nombre</label>
+                    <input type="text" class="form-control" id="entradaDescripcion" placeholder="Nombre" name="f_descripcion"
+                      formControlName="f_descripcion">
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                  <div class="form-group">
+                    <label for="entradaElemento">Páginas</label>
+                    <select id="selectPaginas" class="form-control comboBox" style="width: 100%;" name="f_pagina" formControlName="f_pagina">
+                        <option value=""></option>
+                        <option *ngFor="let pag of paginas" [value]='pag._id' >{{pag.f_descripcion}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                  <div class="form-group">
+                    <label for="entradaUrl">URL Recurso</label>
+                    <input type="text" class="form-control" id="entradaUrl" placeholder="URL Multimedia" name="f_url"
+                      formControlName="f_url">
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                  <div class="form-group">
+                    <label for="entradaElemento">Tipo Recurso</label>
+                    <select id="selectTipoMultimedia" class="form-control comboBox" style="width: 100%;" name="f_tipo_multimedia" formControlName="f_tipo_multimedia">
+                      <option value=""></option>
+                      <option *ngFor="let tipo of tiposMultimedias" [value]='tipo._id' >{{tipo.f_descripcion}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                  <div class="form-group">
+                    <label for="entradaNota">Nota</label>
+                    <textarea class="form-control" id="entradaNota" placeholder="Nota"
+                      name="f_nota" formControlName="f_nota"></textarea>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="box-footer">
+          <button (click)="cancelar()" id="bnt_cerrar_modal" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-fill btn-rose background-color-primary float-right">{{ accion ? 'Crear' : 'Actualizar' }}</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
