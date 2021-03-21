@@ -45,8 +45,7 @@ const routes: Routes = [
 
   {
     path: '**',
-    component: LoginPageComponent,
-    canActivate: [NotLoginRouteGuard]
+    component: HomePageComponent,
   },
   {
     path: '',
