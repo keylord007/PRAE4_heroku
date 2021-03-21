@@ -18,24 +18,23 @@ mongoose.connect(config.db_uri, { useNewUrlParser: true, useUnifiedTopology: tru
 });
 
 //cors
-app.use(cors({ origin: "https://prae2303.herokuapp.com/" }));
+app.use(cors({ origin: "https://prae2303.herokuapp.com" }));
 
 // Body parser
 app.use(bodyParser.urlencoded({ limit: '100mb', extended: false }));
 app.use(bodyParser.json({ limit: '100mb' }));
 
+app.use(express.static(__dirname+'/dist'));
+
+app.get('*', function(req, res){
+    res.sendFile(path.join(__dirname+'/dist/index.html'));
+  });
 //Routers
 let noAuth = require("./Routers/noAuth")(router);
 app.use("/", noAuth);
 
 let web = require("./Routers/web")(router);
 app.use("/", web);
-
-app.use(express.static(__dirname+'/dist'));
-
-app.get('*', function(req, res){
-  res.sendFile(path.join(__dirname+'/dist/index.html'));
-});
 
 app.listen(port, () => {
     console.log("Escuchando por el puerto " + port);
