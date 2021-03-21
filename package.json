@@ -5,11 +5,7 @@
   "main": "index.js",
 
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+
   },
   "author": "",
   "license": "ISC",
