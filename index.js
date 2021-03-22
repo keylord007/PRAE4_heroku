@@ -5,7 +5,7 @@ let port = process.env.PORT || 8080;
 let router = express.Router();
 let bodyParser = require('body-parser');
 let cors = require("cors");
-const config = require("./config.js").get();
+const config = require("./config.js").get(process.env.NODE_ENV);
 
 let mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
