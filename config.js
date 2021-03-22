@@ -1,7 +1,7 @@
 const crypto = require('crypto').randomBytes(256).toString('hex');
 
 var config = {
-    db_uri:"mongodb+srv://admink:key@praedb.drfcw.mongodb.net/praedb?retryWrites=true&w=majority",
+    db_uri:"mongodb://admink:key@praedb-shard-00-02.drfcw.mongodb.net:27017/praedb",
     db_database: "praedb",
     db_secret: crypto,
 }
