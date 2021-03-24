@@ -14,6 +14,10 @@ export class HeaderStyleOneComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    buscarPalabra(palabraBuscada:string){
+      this.router.navigate(['buscar/',palabraBuscada]);
+    }
+
     logOut() {
         localStorage.clear();
         this.router.navigate(["/login"]);

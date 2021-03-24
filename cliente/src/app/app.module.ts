@@ -40,6 +40,7 @@ import { PdfEnlaceComponent } from './components/template-multimedias/pdf-enlace
 import { Ejemplo3Component } from './components/paginas/ejemplo3/ejemplo3.component';
 import { Ejemplo2Component } from './components/paginas/ejemplo2/ejemplo2.component';
 import { Ejemplo1Component } from './components/paginas/ejemplo1/ejemplo1.component';
+import { GoogleFormsComponent } from './components/template-multimedias/google-forms/google-forms.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { Ejemplo1Component } from './components/paginas/ejemplo1/ejemplo1.compon
     Ejemplo3Component,
     Ejemplo2Component,
     Ejemplo1Component,
+    GoogleFormsComponent,
   ],
   imports: [
     CountUpModule,

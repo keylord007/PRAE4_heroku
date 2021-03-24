@@ -4,4 +4,5 @@ export class TiposMultimedias {
     public static VIDEOS_YOUTUBE = 3;
     public static PDF = 4;
     public static PDF_ENLACE = 5;
+    public static GOOGLE_FORMS = 6;
 }
