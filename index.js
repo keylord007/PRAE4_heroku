@@ -31,10 +31,10 @@ app.get('*', function(req, res){
   });
 //Routers
 let noAuth = require("./Routers/noAuth")(router);
-app.use("*", noAuth);
+app.use("/", noAuth);
 
 let web = require("./Routers/web")(router);
-app.use("*", web);
+app.use("/", web);
 
 app.listen(port, () => {
     console.log("Escuchando por el puerto " + port);
