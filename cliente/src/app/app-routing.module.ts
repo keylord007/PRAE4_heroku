@@ -22,7 +22,7 @@ const routes: Routes = [
     component: HomePageComponent,
   },
 
-  { path: 'buscar/:palabra', component: HeaderStyleOneComponent }
+  { path: 'buscar/:palabra', component: HeaderStyleOneComponent },
 
   {
     path: 'paginas',
@@ -65,5 +65,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-  const APP_ROUTING = RouterModule.forRoot(routes);
+
  }
