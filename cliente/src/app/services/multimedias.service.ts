@@ -20,7 +20,7 @@ export class MultimediasService {
   getMultimediasFiltro(params: any) {
     let options = this.loginService.setHeadersHttp();
     options["params"] = new HttpParams({ fromObject: params });
-    return this.http.get(this.servidor + "/multimedias/", options)
+    return this.http.get(this.servidor + "/get-multimedias/", options)
   }
 
   crearMultimedia(datos: any) {

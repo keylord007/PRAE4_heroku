@@ -13,7 +13,7 @@ export class PaginasService {
   getPaginasFiltro(params: any) {
     let options = this.loginService.setHeadersHttp();
     options["params"] = new HttpParams({ fromObject: params });
-    return this.http.get(this.servidor + "/paginas/", options)
+    return this.http.get(this.servidor + "/get-paginas/", options)
   }
 
   crearPagina(datos: any) {
