@@ -9,7 +9,6 @@ import { NotLoginRouteGuard } from './router/guard/notAuth-guard';
 import { Ejemplo3Component } from './components/paginas/ejemplo3/ejemplo3.component';
 import { Ejemplo2Component } from './components/paginas/ejemplo2/ejemplo2.component';
 import { Ejemplo1Component } from './components/paginas/ejemplo1/ejemplo1.component';
-import { HeaderStyleOneComponent } from './components/main-structure/header-style-one/header-style-one.component';
 
 const routes: Routes = [
   {
@@ -21,8 +20,6 @@ const routes: Routes = [
     path: 'home',
     component: HomePageComponent,
   },
-
-  { path: 'buscar/:palabra', component: HeaderStyleOneComponent },
 
   {
     path: 'paginas',
