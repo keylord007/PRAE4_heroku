@@ -26,9 +26,6 @@ app.use(bodyParser.json({ limit: '100mb' }));
 
 app.use(express.static(__dirname+'/dist'));
 
-app.get('*', function(req, res){
-    res.sendFile(path.join(__dirname+'/dist/index.html'));
-  });
 //Routers
 let noAuth = require("./Routers/noAuth")(router);
 app.use("/", noAuth);
@@ -36,6 +33,9 @@ app.use("/", noAuth);
 let web = require("./Routers/web")(router);
 app.use("/", web);
 
+app.get('*', function(req, res){
+    res.sendFile(path.join(__dirname+'/dist/index.html'));
+  });
 app.listen(port, () => {
     console.log("Escuchando por el puerto " + port);
 });
